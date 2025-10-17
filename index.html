@@ -15,36 +15,34 @@
 
   body{
     font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-    color:var(--text);
-    text-align:center;
+    background-color:#ffe6ef; /* nền hồng nhẹ */
+    display:flex;
+    justify-content:center;
+    align-items:center;
     overflow:hidden;
     position:relative;
-
-    /* 🌸 Nền hoa pastel thật */
-    background-image: url('./background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
   }
 
-  .overlay {
-    position:absolute;
-    inset:0;
-    background:rgba(255,255,255,0.15);
-    backdrop-filter: blur(1px);
-  }
-
-  main {
+  /* Hình nền chính ở giữa */
+  .bg-frame{
     position:relative;
-    z-index:2;
+    background-image:url('./background.jpg');
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center;
+    width:min(95vw, 560px);
+    aspect-ratio:167/297;
     display:flex;
-    flex-direction:column;
-    align-items:center;
     justify-content:center;
-    height:100vh;
-    padding:20px;
-    text-shadow: 0 1px 3px rgba(255,255,255,0.8);
+    align-items:center;
+  }
+
+  /* Nội dung nằm trong khung ảnh */
+  .content{
+    width:80%;
+    text-align:center;
+    color:#3a3a3a;
+    text-shadow:0 1px 2px rgba(255,255,255,0.8);
   }
 
   .badge{
@@ -62,29 +60,23 @@
   }
 
   h1{
-    margin:24px 0 8px;
-    font-size:clamp(28px,6vw,46px);
+    margin:18px 0 6px;
+    font-size:clamp(22px, 5vw, 32px);
     font-weight:800;
     color:#1f1f1f;
-    text-shadow:0 2px 6px rgba(255,255,255,0.9);
   }
 
-  p.sub {
-    font-size:18px;
-    color:#333;
-    margin-bottom:20px;
+  p.sub{
+    font-size:16px;
+    margin-bottom:16px;
+    color:#444;
   }
 
   p.wish{
-    font-size:clamp(18px,3.5vw,22px);
-    max-width:800px;
+    font-size:clamp(16px, 3.5vw, 20px);
     line-height:1.6;
-    color:#1a1a1a;
-    margin:0 auto 18px;
-    background:rgba(255,255,255,0.3);
-    border-radius:16px;
-    padding:14px 20px;
-    backdrop-filter:blur(3px);
+    color:#222;
+    margin-bottom:18px;
   }
 
   p.sign{
@@ -92,7 +84,7 @@
     color:#8a2be2;
   }
 
-  /* 🌸 Hoa rơi (bản gốc mượt hơn) */
+  /* Hoa rơi */
   .petal{
     position:absolute;
     top:-10px;
@@ -111,18 +103,18 @@
 </style>
 </head>
 <body>
-  <div class="overlay"></div>
-
-  <main>
-    <span class="badge">🌸 Chúc mừng 20/10</span>
-    <h1>Chúc mừng Ngày Quốc tế Phụ nữ 20/10</h1>
-    <p class="sub">Kính gửi các chị em phụ nữ thân mến,</p>
-    <p class="wish">
-      Ban Quản lý Dự án Khu vực 01 xin gửi lời chúc <strong>sức khỏe, hạnh phúc và thành công</strong>
-      đến tất cả các chị em. Cảm ơn vì những nỗ lực, sự tận tâm và vẻ đẹp dịu dàng đã làm nên những điều tuyệt vời mỗi ngày. 💐
-    </p>
-    <p class="sign">— Ban Quản lý Dự án Khu vực 01</p>
-  </main>
+  <div class="bg-frame">
+    <div class="content">
+      <span class="badge">🌸 Chúc mừng 20/10</span>
+      <h1>Chúc mừng Ngày Quốc tế Phụ nữ 20/10</h1>
+      <p class="sub">Kính gửi các chị em phụ nữ thân mến,</p>
+      <p class="wish">
+        Ban Quản lý Dự án Khu vực 01 xin gửi lời chúc <strong>sức khỏe, hạnh phúc và thành công</strong>
+        đến tất cả các chị em. Cảm ơn vì những nỗ lực, sự tận tâm và vẻ đẹp dịu dàng đã làm nên những điều tuyệt vời mỗi ngày. 💐
+      </p>
+      <p class="sign">— Ban Quản lý Dự án Khu vực 01</p>
+    </div>
+  </div>
 
 <script>
   // 🌸 Hoa rơi toàn màn hình
