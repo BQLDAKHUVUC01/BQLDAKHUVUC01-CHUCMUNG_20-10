@@ -6,8 +6,7 @@
 <title>Chúc mừng 20/10</title>
 <style>
   :root{
-    --bg:#ffedf2;
-    --card:#ffffffcc; /* semi-transparent to let bg show through */
+    --card:#ffffffcc; /* Nền mờ để nổi chữ */
     --accent:#d63384;
     --accent-2:#8a2be2;
     --text:#1f2937;
@@ -18,19 +17,20 @@
     margin:0;
     font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     color:var(--text);
-    display:flex;align-items:center;justify-content:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     padding:24px;
-    /* === Background image from repo root === */
+    /* === Dùng hình background.jfif làm nền === */
     background-image:
       linear-gradient(0deg, rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
-      radial-gradient(1200px 700px at 80% -10%, #ffe6f2 0%, transparent 60%),
-      radial-gradient(1000px 600px at -10% 90%, #e8e6ff 0%, transparent 60%),
-      url('./0f7840d9-2c32-4c00-9b71-f07829e3e5ae.jfif');
-    background-size: cover, auto, auto, cover;
-    background-attachment: fixed, fixed, fixed, fixed;
-    background-position: center, center, center, center;
+      url('./background.jfif');
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
   }
+
   .card{
     width:min(720px, 95vw);
     background:var(--card);
@@ -39,8 +39,9 @@
     box-shadow: 0 10px 30px rgba(0,0,0,.08);
     position:relative;
     overflow:hidden;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(3px);
   }
+
   .badge{
     display:inline-flex;align-items:center;gap:8px;
     background:linear-gradient(90deg, var(--accent), var(--accent-2));
@@ -48,33 +49,34 @@
     padding:8px 14px;border-radius:999px;
     font-weight:600;letter-spacing:.2px;font-size:14px;
   }
+
   h1{
     margin:16px 0 4px;
     font-size: clamp(28px, 6vw, 44px);
     line-height:1.15;
     color:#0f172a;
   }
+
   .sub{margin:0 0 20px;color:#475569;font-size:16px}
   .divider{
     height:1px;background:linear-gradient(90deg, transparent, #e2e8f0, transparent);
     margin:18px 0 22px;
   }
+
   .wish{
     font-size: clamp(18px, 3.8vw, 22px);
     line-height:1.6;
     color:#0b1220;
   }
+
   .sign{
     margin-top:22px;
     font-weight:700;
     color:#9333ea;
     letter-spacing:.2px;
   }
-  .footer{
-    margin-top:26px;
-    font-size:13px;color:#64748b
-  }
-  /* floating petals */
+
+  /* Hoa rơi */
   .petal{
     position:absolute;top:-20px;opacity:.9;pointer-events:none;
     width:14px;height:14px;border-radius:60% 40% 60% 40%/60% 40% 60% 40%;
@@ -101,8 +103,9 @@
     </p>
     <p class="sign">— Ban Quản lý Dự án Khu vực 01</p>
   </div>
+
 <script>
-  // create floating petals
+  // tạo hoa rơi
   (function(){
     const count = 36;
     const card = document.querySelector('.card');
